@@ -13,212 +13,212 @@
 
 let $ = (selector)=> document.querySelector(selector);
 
-// ---
+// // ---
 
-// ### Kilómetros a Millas✅
+// // ### Kilómetros a Millas✅
 
-// Crear una página que:
+// // Crear una página que:
 
-// - Tenga dos `inputs`, uno para el valor de kilómetros y otro para el de millas.
-// - Cuando se modifica alguno de los dos inputs, el otro cambie automáticamente, realizando la conversión adecuada. Tener en cuenta que ki´lómetro es 0.62 millas, y una milla es 1.61 kilómetros.
+// // - Tenga dos `inputs`, uno para el valor de kilómetros y otro para el de millas.
+// // - Cuando se modifica alguno de los dos inputs, el otro cambie automáticamente, realizando la conversión adecuada. Tener en cuenta que ki´lómetro es 0.62 millas, y una milla es 1.61 kilómetros.
 
-let kilometros = $('#input-km');
-let millas = $('#input-millas');
+// let kilometros = $('#input-km');
+// let millas = $('#input-millas');
 
-kilometros.addEventListener('change', function(){
+// kilometros.addEventListener('change', function(){
 
-    let kmIngresados = event.target.value;
-    let pasarAmillas = Number(kmIngresados) * 0.62;
+//     let kmIngresados = event.target.value;
+//     let pasarAmillas = Number(kmIngresados) * 0.62;
 
-    millas.value = pasarAmillas;
+//     millas.value = pasarAmillas;
 
-});
+// });
 
-millas.addEventListener('change', function(){
+// millas.addEventListener('change', function(){
 
-    let millasIngresadas = event.target.value;
-    let pasarAkm = Number(millasIngresadas) * 1.61;
+//     let millasIngresadas = event.target.value;
+//     let pasarAkm = Number(millasIngresadas) * 1.61;
 
-    kilometros.value = pasarAkm;
+//     kilometros.value = pasarAkm;
 
-});
+// });
 
-// ---
+// // ---
 
-// ### RGB
+// // ### RGB✅
 
-// Crear una página que:
+// // Crear una página que:
 
-// - Tenga tres `input`s numéricos, con valor mínimo 0 y valor máximo 255, uno para el valor R (red), otro para el valor G (green) y otro para el valor B (blue).
-// - Todos los `input`s comiencen con el valor 255.
-// - Cuando se modifica algún `input`, se cambie el color de fondo del `body` con el color que se forma a partir de dichos valores.
+// // - Tenga tres `input`s numéricos, con valor mínimo 0 y valor máximo 255, uno para el valor R (red), otro para el valor G (green) y otro para el valor B (blue).
+// // - Todos los `input`s comiencen con el valor 255.
+// // - Cuando se modifica algún `input`, se cambie el color de fondo del `body` con el color que se forma a partir de dichos valores.
 
-let red = $('#red');
-let green = $('#green');
-let blue = $('#blue');
-let body = $('body');
+// let red = $('#red');
+// let green = $('#green');
+// let blue = $('#blue');
+// let body = $('body');
 
-red.addEventListener('input', (event)=>{
+// red.addEventListener('input', (event)=>{
     
-    let colorBody = `rgb(${event.target.value},${green.value},${blue.value})`
+//     let colorBody = `rgb(${event.target.value},${green.value},${blue.value})`
 
-    console.log(colorBody);
-    body.style.backgroundColor = colorBody;
-})
+//     console.log(colorBody);
+//     body.style.backgroundColor = colorBody;
+// })
 
-green.addEventListener('input', (event)=>{
+// green.addEventListener('input', (event)=>{
 
-    let colorBody = `rgb(${red.value},${event.target.value},${blue.value})`
+//     let colorBody = `rgb(${red.value},${event.target.value},${blue.value})`
 
-    console.log(colorBody);
-    body.style.backgroundColor = colorBody;
-})
+//     console.log(colorBody);
+//     body.style.backgroundColor = colorBody;
+// })
 
-blue.addEventListener('input', (event)=>{
+// blue.addEventListener('input', (event)=>{
 
-    let colorBody = `rgb(${red.value},${green.value},${event.target.value})`
+//     let colorBody = `rgb(${red.value},${green.value},${event.target.value})`
 
-    console.log(colorBody);
-    body.style.backgroundColor = colorBody;
-})
-
-
+//     console.log(colorBody);
+//     body.style.backgroundColor = colorBody;
+// })
 
 
 
-// ---
-
-// ### Todo
-
-// Crear una página que:
-
-// - Tenga un `input`, un botón que diga `Crear todo` y una lista.
-// - Al presionar el botón, _si el `input` no está vacío_, se agregue un ítem a la lista con el contenido del `input` y se borre el contenido del `input`.
-
-let inputItem = $('.input__item');
-let btnAgregarItem = $('.btn__agregar__item');
-let lista = $('.lista');
 
 
+// // ---
 
-btnAgregarItem.addEventListener('click', ()=>{
-    let itemCreado = inputItem.value;
-    if(itemCreado != ''){
-        lista.innerHTML += `<li>${itemCreado}</li>`
-        inputItem.value ='';
-    }
+// // ### Todo✅
+
+// // Crear una página que:
+
+// // - Tenga un `input`, un botón que diga `Crear todo` y una lista.
+// // - Al presionar el botón, _si el `input` no está vacío_, se agregue un ítem a la lista con el contenido del `input` y se borre el contenido del `input`.
+
+// let inputItem = $('.input__item');
+// let btnAgregarItem = $('.btn__agregar__item');
+// let lista = $('.lista');
+
+
+
+// btnAgregarItem.addEventListener('click', ()=>{
+//     let itemCreado = inputItem.value;
+//     if(itemCreado != ''){
+//         lista.innerHTML += `<li>${itemCreado}</li>`
+//         inputItem.value ='';
+//     }
     
-})
+// })
 
 
 
-// ### Agregar imágenes
+// // ### Agregar imágenes✅
 
-// Crear una página que:
+// // Crear una página que:
 
-// - Tenga un `input` para la url de la imagen, un botón que diga `Agregar imagen` y un contenedor flexible donde mostrar imágenes como en una grilla.
-// - Al presionar el botón, _si el `input` no está vacío_, se agregue una imagen al contenedor cuyo `src` es el contenido del `input` y se borre el contenido del `input`.
-// - Al hacer click en una imagen, esta se elimine.
+// // - Tenga un `input` para la url de la imagen, un botón que diga `Agregar imagen` y un contenedor flexible donde mostrar imágenes como en una grilla.
+// // - Al presionar el botón, _si el `input` no está vacío_, se agregue una imagen al contenedor cuyo `src` es el contenido del `input` y se borre el contenido del `input`.
+// // - Al hacer click en una imagen, esta se elimine.
 
-let inputUrl = $('#input__url');
-let btnAgregarImg = $('.btn__agregar__img');
-let contImg = $('.container__img');
+// let inputUrl = $('#input__url');
+// let btnAgregarImg = $('.btn__agregar__img');
+// let contImg = $('.container__img');
 
-btnAgregarImg.addEventListener('click', ()=>{
-    let urlIngresada = inputUrl.value;
-    if (urlIngresada != '') {
+// btnAgregarImg.addEventListener('click', ()=>{
+//     let urlIngresada = inputUrl.value;
+//     if (urlIngresada != '') {
         
-        contImg.innerHTML += `<img src="${urlIngresada}" alt="">`
+//         contImg.innerHTML += `<img src="${urlIngresada}" alt="" class="agregar-img">`
 
-        inputUrl.value = '';
-    }
-})
+//         inputUrl.value = '';
+//     }
+// })
 
-contImg.addEventListener('click', (event)=>{
+// contImg.addEventListener('click', (event)=>{
 
-    let eliminarImg = event.target;
-    eliminarImg.remove();
+//     let eliminarImg = event.target;
+//     eliminarImg.remove();
   
-})
+// })
 
-// ---
+// // ---
 
-// ### Comentario
+// // ### Comentario✅
 
-// Crear una página que:
+// // Crear una página que:
 
-// - Tenga un `textarea`, un texto pequeño debajo de este y un botón que diga `Enviar`.
-// - El texto comience diciendo `0/240 caracteres`.
-// - Cuando se escribe algo en el `textarea`, se actualice el texto para reflejar la cantidad de caracteres restantes.
-// - Al presionar el botón, si hay 240 caracteres o menos, se borre el contenido del input y se actualice el texto para que diga `Comentario enviado`.
-// - El color del borde del `textarea` cambie de la siguiente forma:
-//   - normal si está vacío
-//   - verde si tiene texto y 240 caracteres o menos
-//   - rojo si tiene más de 240 caracters
+// // - Tenga un `textarea`, un texto pequeño debajo de este y un botón que diga `Enviar`.
+// // - El texto comience diciendo `0/240 caracteres`.
+// // - Cuando se escribe algo en el `textarea`, se actualice el texto para reflejar la cantidad de caracteres restantes.
+// // - Al presionar el botón, si hay 240 caracteres o menos, se borre el contenido del input y se actualice el texto para que diga `Comentario enviado`.
+// // - El color del borde del `textarea` cambie de la siguiente forma:
+// //   - normal si está vacío
+// //   - verde si tiene texto y 240 caracteres o menos
+// //   - rojo si tiene más de 240 caracters
 
-let textComentario = $('#textarea__comentario');
-let numeroCaracteres = $('.caracteres');
-let btnEnviar = $('.btn__enviar');
+// let textComentario = $('#textarea__comentario');
+// let numeroCaracteres = $('.caracteres');
+// let btnEnviar = $('.btn__enviar');
 
-textComentario.addEventListener("input", () => {
-  let caracteresIngresados = textComentario.value.length;
-  let caracteresRestantes = 240 - caracteresIngresados;
+// textComentario.addEventListener("input", () => {
+//   let caracteresIngresados = textComentario.value.length;
+//   let caracteresRestantes = 240 - caracteresIngresados;
 
-  numeroCaracteres.innerText = `Restan ${caracteresRestantes} caracteres.`;
+//   numeroCaracteres.innerText = `Restan ${caracteresRestantes} caracteres.`;
 
-  if(textComentario.value.length <= 240){
-    textComentario.style.borderColor = `green`;
-  } else if (textComentario.value.length > 240){
-    textComentario.style.borderColor = `red`;
-  }
-});
+//   if(textComentario.value.length <= 240){
+//     textComentario.style.borderColor = `green`;
+//   } else if (textComentario.value.length > 240){
+//     textComentario.style.borderColor = `red`;
+//   }
+// });
 
-btnEnviar.addEventListener('click', ()=>{
-    if (textComentario.value.length <= 240 ) {
-        numeroCaracteres.innerText = `Comentario enviado`;
+// btnEnviar.addEventListener('click', ()=>{
+//     if (textComentario.value.length <= 240 ) {
+//         numeroCaracteres.innerText = `Comentario enviado`;
         
-        textComentario.value =``;
-    } else if (textComentario.value.length > 240 ){
-        numeroCaracteres.innerText = `Hay mas de 240 caracteres` 
-    }
+//         textComentario.value =``;
+//     } else if (textComentario.value.length > 240 ){
+//         numeroCaracteres.innerText = `Hay mas de 240 caracteres` 
+//     }
 
-})
+// })
 
-// ---
+// // ---
 
-// ### Conversor avanzado
+// // ### Conversor avanzado
 
-// Crear una página que:
+// // Crear una página que:
 
-// - Tenga
-//   - un `input` para ingresar el valor a convertir
-//   - un `select` para seleccionar la unidad del valor convertido
-//   - un `select` para seleccionar la unidad a convertir
-//   - un botón que diga `Intercambiar`
-//   - un texto que muestre el resultado
-// - Cuyos `select`s tengan las siguientes opciones:
-//   - Kilómetros (km)
-//   - Metros (m)
-//   - Decímetros (dm)
-//   - Centímetros (cm)
-//   - Milímetros (mm)
-// - Ambos `select` comiencen con la opción `metros` seleccionada y el `input` comience con el valor `1`.
-// - Al seleccionar una nueva opción en cualquiera de los `select` o al modificar el valor del input, se actualice el texto con el resultado de la conversión del valor ingresado de una unidad a la otra.
-// - Al clickear el botón `Intercambiar` se intercambien las opciones de los `select`s y se actualice el texto.
-//   <br>
+// // - Tenga
+// //   - un `input` para ingresar el valor a convertir
+// //   - un `select` para seleccionar la unidad del valor convertido
+// //   - un `select` para seleccionar la unidad a convertir
+// //   - un botón que diga `Intercambiar`
+// //   - un texto que muestre el resultado
+// // - Cuyos `select`s tengan las siguientes opciones:
+// //   - Kilómetros (km)
+// //   - Metros (m)
+// //   - Decímetros (dm)
+// //   - Centímetros (cm)
+// //   - Milímetros (mm)
+// // - Ambos `select` comiencen con la opción `metros` seleccionada y el `input` comience con el valor `1`.
+// // - Al seleccionar una nueva opción en cualquiera de los `select` o al modificar el valor del input, se actualice el texto con el resultado de la conversión del valor ingresado de una unidad a la otra.
+// // - Al clickear el botón `Intercambiar` se intercambien las opciones de los `select`s y se actualice el texto.
+// //   <br>
 
-// **TIP**
+// // **TIP**
 
-// Para realizar este ejercicio, el `value` de cada option del `select` deben ser los siguiente:
+// // Para realizar este ejercicio, el `value` de cada option del `select` deben ser los siguiente:
 
-// - Para `Kilómetros`, el value debe ser `1000`
-// - Para `Metros`, el value debe ser `1`
-// - Para `Decímetros`, el value debe ser `0.1`
-// - Para `Centímetros`, el value debe ser `0.01`
-// - Para `Milímetros`, el value debe ser `0.001`
-//   <br>
+// // - Para `Kilómetros`, el value debe ser `1000`
+// // - Para `Metros`, el value debe ser `1`
+// // - Para `Decímetros`, el value debe ser `0.1`
+// // - Para `Centímetros`, el value debe ser `0.01`
+// // - Para `Milímetros`, el value debe ser `0.001`
+// //   <br>
 
-// La conversión se realiza con la fórmula: `VALOR_INGRESADO * VALOR_UNIDAD / VALOR_UNIDAD_A_CONVERTIR`.
+// // La conversión se realiza con la fórmula: `VALOR_INGRESADO * VALOR_UNIDAD / VALOR_UNIDAD_A_CONVERTIR`.
 
 let numeroIngresado = $('.input-valor-a-convertir');
 let valorConvertido = $('.unidad-valor-convertido');
@@ -252,7 +252,7 @@ btnIntercambiar.addEventListener('click', ()=>{
 
 // ---
 
-// ### Card dinámica
+// ### Card dinámica✅
 
 // Crear una página que:
 
@@ -264,7 +264,58 @@ btnIntercambiar.addEventListener('click', ()=>{
 
 // ---
 
-// ### Selector de imágenes
+// let inputUrlImagen = $('#url-imagen');
+// let inputTituloImagen = $('#titulo-imagen');
+// let inputDescripcion = $('#descripcion');
+// let inputUrlExterno = $('#url-externo');
+// let checkboxLinkExterno = $('#link-externo');
+
+// let cardImagen = $('.card-imagen');
+// let tituloImagen = $('.titulo-imagen');
+// let descripcion = $('.descripcion');
+// let linkVerMas = $('.cont-ver-mas');
+
+// inputUrlImagen.addEventListener('input', (event)=>{
+//     let urlImagenIngresada = event.target.value;
+//    // console.log(urlImagenIngresada);
+//     cardImagen.innerHTML = `<img src="${urlImagenIngresada}" alt="" class="imagenCard">`
+// });
+
+// inputTituloImagen.addEventListener('input', ()=>{
+//     let tituloIngresado = event.target.value;
+
+//     tituloImagen.innerText = tituloIngresado;
+// })
+
+// inputDescripcion.addEventListener('input', ()=>{
+//     let descripcionIngresada = event.target.value;
+
+//     descripcion.innerText = descripcionIngresada;
+// })
+
+// checkboxLinkExterno.addEventListener('click', ()=>{
+
+//     if (checkboxLinkExterno.checked){
+//         inputUrlExterno.disabled = false;
+//         linkVerMas.classList.remove('oculto')
+//     } else{
+//         inputUrlExterno.disabled = true;
+//         linkVerMas.classList.add('oculto')
+//     }
+    
+// })
+
+// inputUrlExterno.addEventListener('input', ()=>{
+//     let urlExterno = event.target.value;
+//     console.log(urlExterno)
+
+//     linkVerMas.innerHTML= `<a href="${urlExterno} " class="ver-mas">Ver más</a>`
+
+// })
+
+
+
+// ### Selector de imágenes✅
 
 // Crear una página que:
 
@@ -275,9 +326,47 @@ btnIntercambiar.addEventListener('click', ()=>{
 
 // **TIP:** Agregar a cada imagen un atributo `data-categoria` cuyo valor se corresponda con el atributo `value` del `option` de la categoría correspondiente.
 
+// let itemSeleccionado = $('#selec-img');
+// let contTodas = $('.cont-todas');
+// let contAnimales = $('.animales');
+// let contComidas = $('.comidas');
+// let contPaisajes = $('.paisajes');
+
+// itemSeleccionado.addEventListener('change', (event)=>{
+//     let seleccion = event.target.value;
+
+//     switch(seleccion){
+//         case 'animales':
+//             contComidas.classList.add('oculto');
+//             contPaisajes.classList.add('oculto');
+//             contAnimales.classList.remove('oculto');
+//             break;
+//             case 'comida':
+//                 contAnimales.classList.add('oculto');
+//             contPaisajes.classList.add('oculto');
+//             contComidas.classList.remove('oculto');
+//             break;
+//             case 'paisajes':
+//                 contAnimales.classList.add('oculto');
+//             contComidas.classList.add('oculto');
+//             contPaisajes.classList.remove('oculto');
+//             break;
+//             case 'todas':
+//                 contAnimales.classList.remove('oculto');
+//             contComidas.classList.remove('oculto');
+//             contPaisajes.classList.remove('oculto');
+//  }
+// })
+
+
+
 // ---
 
-// ### Buscador
+
+
+
+
+// ### Buscador❌
 
 // Crear una página que:
 
@@ -290,6 +379,25 @@ btnIntercambiar.addEventListener('click', ()=>{
 // <br>
 
 // Por ejemplo, si una imagen tiene un `alt` que dice `Oso koala comiendo eucaliptus` y se busca `ko` dicha imagen debe mostrarse.
+
+// let inputBusqueda = $('#input-busqueda');
+// let resultadosEncontrados = $('.resultados-encontrados');
+// let grilla = $('.grilla');
+// //console.log(grilla.innerHTML)
+// let imagen = $('.oveja')
+
+// let atributo = imagen.getAttribute("alt");
+// console.log(atributo)
+
+// inputBusqueda.addEventListener('input', (event)=>{
+// let busqueda = event.target.value;
+
+// if(atributo.includes(busqueda)){
+//     alert('hola')
+// }
+// });
+
+
 
 // ---
 

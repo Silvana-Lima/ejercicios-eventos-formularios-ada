@@ -10,6 +10,9 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #82CD47;
     font-size: 18px;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
 }
 
 h1{
@@ -18,7 +21,7 @@ h1{
     font-size: 25px;
 }
 
-label, input,ul{
+label, input,ul, textarea{
     margin-left: 30px;
     padding: 10px;
 }
@@ -32,7 +35,7 @@ button{
     padding: 10px;
 }
 
-img{
+.agregar-img{
     width: 100px;
     height: 150px;
     margin: 10px;
@@ -71,4 +74,49 @@ border:2px solid;
     border: 1px solid black;
     
     padding: 10px;
+}
+
+
+.cont-inputs, .cont-card{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 30px;
+    border: 1.5px solid ;
+    padding: 10px;
+}
+
+.cont-inputs *, .cont-card *{
+    margin: 5px;
+
+}
+
+.card-imagen{
+    height: 200px;
+    
+
+}
+
+.imagenCard{
+    height: 100%;
+}
+
+.cont-ejercicio-card{
+    display: flex;
+}
+
+.oculto{
+    display: none;
+}
+
+select{
+    margin: 30px;
+}
+
+img{
+    width: 200px;
+}
+
+.grilla{
+    width: 800px;
 }
